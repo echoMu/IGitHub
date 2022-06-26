@@ -1,38 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.igithub">
+    xmlns:dist="http://schemas.android.com/apk/distribution"
+    package="com.echomu.github">
+
+    <dist:module dist:instant="true" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
+        android:name="com.echomu.github.AndroidGenericFrameworkApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.IGitHub" >
+        android:theme="@style/AppTheme">
 
         <activity
-            android:name=".ui.user.activity.RegisterAndLoginActivity"
+            android:name="com.echomu.github.ui.main.activity.SplashActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateUnspecified|adjustPan">
+
+            <intent-filter>
+
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+
+            </intent-filter>
+
+        </activity>
+
+        <activity
+            android:name="com.echomu.github.ui.user.activity.RegisterAndLoginActivity"
             android:launchMode="standard"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateUnspecified|adjustPan" />
 
         <activity
-            android:name=".ui.user.activity.GithubOauthActivity"
+            android:name="com.echomu.github.ui.user.activity.GithubOauthActivity"
             android:launchMode="standard"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateUnspecified|adjustPan" />
 
         <activity
-            android:name=".ui.main.activity.MainActivity"
+            android:name="com.echomu.github.ui.main.activity.MainActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateUnspecified|adjustPan" />
 
         <activity
-            android:name=".ui.user.activity.PersonalCenterActivity"
+            android:name="com.echomu.github.ui.user.activity.PersonalCenterActivity"
             android:launchMode="standard"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateUnspecified|adjustPan" />
+
     </application>
 
 </manifest>

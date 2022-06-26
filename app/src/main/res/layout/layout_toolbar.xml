@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.echomu.github.ui.BaseViewModel" />
+
+        <variable
+            name="handlers"
+            type="com.echomu.github.ui.BaseViewModel.Handlers" />
+
+    </data>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        onNavigationIconClick="@{handlers::onNavigationIconClick}"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/white"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:title="@{viewModel.title}"
+        app:titleTextColor="@color/text_black"
+        tools:title="标题">
+
+    </androidx.appcompat.widget.Toolbar>
+
+</layout>
